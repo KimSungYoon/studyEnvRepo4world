@@ -23,7 +23,7 @@ steps:
 
 
 ##docker 
-- name: 'gcr.io/cloud-builders/docker'
+- name: 'gcr.io/cloud-builders/docker' 
   args: ['build', '-t', 'world_img:v9', 'docker/']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['tag', 'world_img:v9', 'gcr.io/studyenv4/world_img:v9']
