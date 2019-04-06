@@ -15,4 +15,4 @@ spec:
         - image: gcr.io/studyenv4/world_img:v6
           name: world-node
           ports:
-            - containerPort: 8080
+            - containerPort: 8080 
