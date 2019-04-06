@@ -13,7 +13,7 @@ public class Web {
 	
 	@RequestMapping("/world")
 	public String world() {
-		return "This is world 6";
+		return "This is world 7";
 	}
 }
  

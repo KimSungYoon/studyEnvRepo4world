@@ -9,26 +9,26 @@ steps:
 
 ##docker 
 #- name: 'gcr.io/cloud-builders/docker'
-#  args: ['build', '-t', 'world_img:v6', 'docker/']
+#  args: ['build', '-t', 'world_img:v7', 'docker/']
 #- name: 'gcr.io/cloud-builders/docker'
-#  args: ['tag', 'world_img:v6', 'gcr.io/studyenv4/world_img:v6']
+#  args: ['tag', 'world_img:v7', 'gcr.io/studyenv4/world_img:v7']
 #- name: 'gcr.io/cloud-builders/docker'
-#  args: ['push', 'gcr.io/studyenv4/world_img:v6']
+#  args: ['push', 'gcr.io/studyenv4/world_img:v7']
 #
 ##kubectl
 #- name: 'gcr.io/cloud-builders/kubectl'
-#  args: ['set', 'image', 'deployment', 'world-node', 'world-node=gcr.io/studyenv4/world_img:v6' ]
+#  args: ['set', 'image', 'deployment', 'world-node', 'world-node=gcr.io/studyenv4/world_img:v7' ]
 #  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
 
 
 
 ##docker 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'world_img:v6', 'docker/']
+  args: ['build', '-t', 'world_img:v7', 'docker/']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['tag', 'world_img:v6', 'gcr.io/studyenv4/world_img:v6']
+  args: ['tag', 'world_img:v7', 'gcr.io/studyenv4/world_img:v7']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/studyenv4/world_img:v6']
+  args: ['push', 'gcr.io/studyenv4/world_img:v7']
 
 
 #kubectl  delete and re creation

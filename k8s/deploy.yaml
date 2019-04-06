@@ -12,7 +12,7 @@ spec:
         name: world-node
     spec:
       containers:
-        - image: gcr.io/studyenv4/world_img:v6
+        - image: gcr.io/studyenv4/world_img:v7
           name: world-node
           ports:
             - containerPort: 8080 
