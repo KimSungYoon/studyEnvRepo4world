@@ -28,7 +28,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['tag', 'world_img:v7', 'gcr.io/studyenv4/world_img:v7']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/studyenv4/world_img:v7']
+  args: ['push', 'gcr.io/studyenv4/world_img:v7'] 
 
 
 #kubectl  delete and re creation

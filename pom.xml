@@ -46,7 +46,7 @@
 							<goal>repackage</goal>
 						</goals>
 						<configuration>
-							<mainClass>world.StudyEnv4Application</mainClass>
+							<mainClass>world.StudyEnv4WorldApplication</mainClass>
 							<outputDirectory>${project.basedir}/docker</outputDirectory>
 						</configuration>
 					</execution>
