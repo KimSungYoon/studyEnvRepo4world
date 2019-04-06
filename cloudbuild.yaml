@@ -32,13 +32,13 @@ steps:
 
 
 #kubectl  delete and re creation
-- name: 'gcr.io/cloud-builders/kubectl'
-  args: ['delete', 'service', 'world-service']
-  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
-  
-- name: 'gcr.io/cloud-builders/kubectl'
-  args: ['delete', 'deploy', 'world-node']
-  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
+#- name: 'gcr.io/cloud-builders/kubectl'
+#  args: ['delete', 'service', 'world-service']
+#  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
+#  
+#- name: 'gcr.io/cloud-builders/kubectl'
+#  args: ['delete', 'deploy', 'world-node']
+#  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
   
   
   
