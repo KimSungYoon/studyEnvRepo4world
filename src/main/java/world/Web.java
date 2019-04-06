@@ -5,15 +5,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Web {
-
-//	@RequestMapping("/hello")
-//	public String hello() {
-//		return "This is hello 6";
-//	}
 	
-	@RequestMapping("/world")
+	@RequestMapping("name")
 	public String world() {
-		return "This is world 7";
+		return "This is world 9";
 	}
 }
  
