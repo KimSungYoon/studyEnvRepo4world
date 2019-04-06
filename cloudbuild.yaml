@@ -1,0 +1,51 @@
+steps:
+
+##mvn
+- name: 'gcr.io/cloud-builders/mvn'
+  args: ['clean', 'package']
+
+
+
+
+##docker 
+#- name: 'gcr.io/cloud-builders/docker'
+#  args: ['build', '-t', 'world_img:v6', 'docker/']
+#- name: 'gcr.io/cloud-builders/docker'
+#  args: ['tag', 'world_img:v6', 'gcr.io/studyenv4/world_img:v6']
+#- name: 'gcr.io/cloud-builders/docker'
+#  args: ['push', 'gcr.io/studyenv4/world_img:v6']
+#
+##kubectl
+#- name: 'gcr.io/cloud-builders/kubectl'
+#  args: ['set', 'image', 'deployment', 'world-node', 'world-node=gcr.io/studyenv4/world_img:v6' ]
+#  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
+
+
+
+##docker 
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'world_img:v6', 'docker/']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'world_img:v6', 'gcr.io/studyenv4/world_img:v6']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/studyenv4/world_img:v6']
+
+
+#kubectl  delete and re creation
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['delete', 'service', 'world-service']
+  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
+  
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['delete', 'deploy', 'world-node']
+  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
+  
+  
+  
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['create', '-f', 'k8s/deploy.yaml']
+  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
+  
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['create', '-f', 'k8s/service.yaml']
+  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]

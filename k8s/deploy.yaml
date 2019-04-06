@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    name: world-node
+  name: world-node
+spec:
+  replicas: 2   # 3 ->2 
+  template:
+    metadata:
+      labels:
+        name: world-node
+    spec:
+      containers:
+        - image: gcr.io/studyenv4/world_img:v6
+          name: world-node
+          ports:
+            - containerPort: 8080
