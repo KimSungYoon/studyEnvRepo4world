@@ -9,36 +9,36 @@ steps:
 
 ##docker 
 #- name: 'gcr.io/cloud-builders/docker'
-#  args: ['build', '-t', 'world_img:v7', 'docker/']
+#  args: ['build', '-t', 'world_img:v8', 'docker/']
 #- name: 'gcr.io/cloud-builders/docker'
-#  args: ['tag', 'world_img:v7', 'gcr.io/studyenv4/world_img:v7']
+#  args: ['tag', 'world_img:v8', 'gcr.io/studyenv4/world_img:v8']
 #- name: 'gcr.io/cloud-builders/docker'
-#  args: ['push', 'gcr.io/studyenv4/world_img:v7']
+#  args: ['push', 'gcr.io/studyenv4/world_img:v8']
 #
 ##kubectl
 #- name: 'gcr.io/cloud-builders/kubectl'
-#  args: ['set', 'image', 'deployment', 'world-node', 'world-node=gcr.io/studyenv4/world_img:v7' ]
+#  args: ['set', 'image', 'deployment', 'world-node', 'world-node=gcr.io/studyenv4/world_img:v8' ]
 #  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
 
 
 
 ##docker 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'world_img:v7', 'docker/']
+  args: ['build', '-t', 'world_img:v8', 'docker/']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['tag', 'world_img:v7', 'gcr.io/studyenv4/world_img:v7']
+  args: ['tag', 'world_img:v8', 'gcr.io/studyenv4/world_img:v8']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/studyenv4/world_img:v7'] 
+  args: ['push', 'gcr.io/studyenv4/world_img:v8'] 
 
 
 #kubectl  delete and re creation
-#- name: 'gcr.io/cloud-builders/kubectl'
-#  args: ['delete', 'service', 'world-service']
-#  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
-#  
-#- name: 'gcr.io/cloud-builders/kubectl'
-#  args: ['delete', 'deploy', 'world-node']
-#  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['delete', 'service', 'world-service']
+  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
+  
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['delete', 'deploy', 'world-node']
+  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
   
   
   
